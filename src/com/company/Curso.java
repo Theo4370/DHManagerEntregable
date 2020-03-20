@@ -25,6 +25,7 @@ public class Curso {
         codigoDeCurso = codigoDeCurso;
     }
 
+    @Override
     public boolean equals(Object cursoAComparar) {
         if (!(cursoAComparar instanceof Curso)) {
             return false;
