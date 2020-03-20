@@ -21,7 +21,7 @@ public class Curso {
     private List<Alumno> listaDeAlumnos;
 
     /**
-     * Item I.
+     * Parte I, items 1 y 2.
      * Para poder dar de alta un curso, solo necesito los parámetros nombreDelCurso, codigoDeCurso, cupoMaximoDeAlumnos, entonces elimino el resto de los parámetros del constructor.
      * Los this. de profesorTitular, profesorAdjunto y listaDeAlumnos las comento para no general conflictos.
      */
