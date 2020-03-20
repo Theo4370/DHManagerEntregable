@@ -78,15 +78,15 @@ public class Curso {
         this.codigoDeCurso = codigoDeCurso;
     }
 
-    //public Boolean agregarUnAlumno(Alumno unAlumno)
+
     public boolean agregarUnAlumno(Alumno unAlumno) {
         if (this.cupoMaximoDeAlumnos >= listaDeAlumnos.size()) ;
-        listaDeAlumnos.add(unAlumno);
+        this.listaDeAlumnos.add(unAlumno);
         return true;
     }
 
-    public void eliminarAlumno(Alumno unAlumno){
-        listaDeAlumnos.remove(unAlumno);
+    public void eliminarAlumno(Alumno unAlumno) {
+        this.listaDeAlumnos.remove(unAlumno);
     }
 
 
