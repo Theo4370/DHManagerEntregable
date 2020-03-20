@@ -20,14 +20,19 @@ public class Curso {
     private Integer cupoMaximoDeAlumnos;
     private List<Alumno> listaDeAlumnos;
 
+    /**
+     * Item I.
+     * Para poder dar de alta un curso, solo necesito los parámetros nombreDelCurso, codigoDeCurso, cupoMaximoDeAlumnos, entonces elimino el resto de los parámetros del constructor.
+     * Los this. de profesorTitular, profesorAdjunto y listaDeAlumnos las comento para no general conflictos.
+     */
 
-    public Curso(String nombreDelCurso, Integer codigoDeCurso, ProfesorTitular profesorTitular, ProfesorAdjunto profesorAdjunto, Integer cupoMaximoDeAlumnos, List<Alumno> listaDeALumnos) {
+    public Curso(String nombreDelCurso, Integer codigoDeCurso, Integer cupoMaximoDeAlumnos) {
         this.nombreDeCurso = nombreDelCurso;
         this.codigoDeCurso = codigoDeCurso;
-        this.profesorTitular = profesorTitular;
-        this.profesorAdjunto = profesorAdjunto;
+        //this.profesorTitular = profesorTitular;
+        //this.profesorAdjunto = profesorAdjunto;
         this.cupoMaximoDeAlumnos = cupoMaximoDeAlumnos;
-        this.listaDeAlumnos = listaDeALumnos;
+        this.listaDeAlumnos = new ArrayList<>();
     }
 
     public ProfesorTitular getProfesorTitular() {
@@ -80,8 +85,12 @@ public class Curso {
 
 
     public boolean agregarUnAlumno(Alumno unAlumno) {
-        if (this.cupoMaximoDeAlumnos >= listaDeAlumnos.size()) ;
-        this.listaDeAlumnos.add(unAlumno);
+        if (this.cupoMaximoDeAlumnos > listaDeAlumnos.size()) {
+            listaDeAlumnos.add(unAlumno);
+
+        } else {
+            System.out.println("No hay mas cupos para este curso");
+        }
         return true;
     }
 
@@ -100,3 +109,4 @@ public class Curso {
         return otroCurso.getCodigoDeCurso().equals(this.codigoDeCurso);
     }
 }
+

@@ -13,20 +13,21 @@ public class Main {
 
         Alumno unAlumno = new Alumno("Theo", "Musumeci", 55117);
         Alumno otroAlumno = new Alumno("Juan", "Perez", 55115);
-        System.out.println("" + otroAlumno.equals(unAlumno));
 
-        ProfesorTitular unProfesor = new ProfesorTitular("Domingo", "Faustino", 30, 6871,"Fisico cuantico");
-        ProfesorAdjunto otroProfesor = new ProfesorAdjunto("Jose", "Fernandez", 27, 6871,6);
-        System.out.println("" + otroProfesor.equals(unProfesor));
-        List<Alumno> lista = new ArrayList<>();
-        lista.add(unAlumno);
-        lista.add(otroAlumno);
 
-        Curso unCurso = new Curso("Matematica", 1589, unProfesor, otroProfesor, 4, lista);
-        Curso otroCurso = new Curso("Historia", 1589, unProfesor, otroProfesor, 8, lista);
-        System.out.println("" + otroCurso.equals(unCurso));
-
-Inscripcion inscripcion = new Inscripcion(unAlumno,unCurso);
-
+        DigitalHouseManager nuevoManager = new DigitalHouseManager();
+        nuevoManager.altaCurso("Matematica", 8756, 7);
+        //nuevoManager.bajaCurso(8756);
+        nuevoManager.altaCurso("Fisica", 8796, 7);
+        nuevoManager.altaCurso("Quimica", 8706, 7);
+        
+/**
+        Curso curso = new Curso("clase", 4758, 1);
+        curso.agregarUnAlumno(unAlumno);
+        curso.agregarUnAlumno(otroAlumno);
+        System.out.println(""+curso.getListaDeAlumnos());
+        curso.eliminarAlumno(unAlumno);
+        System.out.println(""+curso.getListaDeAlumnos());
+   */
     }
 }
