@@ -26,6 +26,7 @@ public class Main {
         Curso otroCurso = new Curso("Historia", 1589, unProfesor, otroProfesor, 8, lista);
         System.out.println("" + otroCurso.equals(unCurso));
 
+Inscripcion inscripcion = new Inscripcion(unAlumno,unCurso);
 
     }
 }
