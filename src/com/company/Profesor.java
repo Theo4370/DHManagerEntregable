@@ -1,10 +1,23 @@
 package com.company;
 
-public class Profesor {
+/**
+ * Item 1, parte D.
+ * Para agregar dos nuevas categorias de profesores, creo dos nuevas clases llamadas ProfesorTitular y ProfesorAdjunto, estas pasan a ser extensiones de la clase Profesor, tomando todos sus atributos y métodos.
+ * La clase profesor pasa a ser abstracta, ya que nunca vamos a crear un objeto de clase Profesor, si no que siempre tendra que ser Titular o Adjunto.
+ */
+
+public abstract class Profesor {
     private String nombre;
     private String apellido;
     private Integer antiguedad;
     private Integer codigoDeProfesor;
+
+    public Profesor(String nombre, String apellido, Integer antiguedad, Integer codigoDeProfesor) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.antiguedad = antiguedad;
+        this.codigoDeProfesor = codigoDeProfesor;
+    }
 
     public String getNombre() {
         return nombre;
@@ -38,12 +51,6 @@ public class Profesor {
         this.codigoDeProfesor = codigoDeProfesor;
     }
 
-    public Profesor(String nombre, String apellido, Integer antiguedad, Integer codigoDeProfesor) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.antiguedad = antiguedad;
-        this.codigoDeProfesor = codigoDeProfesor;
-    }
 
     @Override
     public boolean equals(Object profesorAComparar) {

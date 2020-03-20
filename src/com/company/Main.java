@@ -13,8 +13,8 @@ public class Main {
         Curso otroCurso = new Curso("Historia", 1589);
         System.out.println("" + otroCurso.equals(unCurso));
 
-        Profesor unProfesor = new Profesor("Domingo", "Faustino", 30, 6871);
-        Profesor otroProfesor = new Profesor("Jose", "Fernandez", 27, 6872);
+        Profesor unProfesor = new ProfesorTitular("Domingo", "Faustino", 30, 6871,"Fisico cuantico");
+        Profesor otroProfesor = new ProfesorAdjunto("Jose", "Fernandez", 27, 6871,6);
         System.out.println("" + otroProfesor.equals(unProfesor));
     }
 }
