@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Profesor;
 
 /**
  * Item 1, parte D.

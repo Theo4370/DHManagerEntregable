@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Profesor;
 
 public class ProfesorTitular extends Profesor {
     private String especialidad;
