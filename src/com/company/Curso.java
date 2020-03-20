@@ -1,13 +1,15 @@
 package com.company;
+
 import com.company.Profesor.ProfesorAdjunto;
 import com.company.Profesor.ProfesorTitular;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
-Item 1, parte E.
- Ahora al curso se le agregan los atributos profesorTitular(ProfesorTitular), profesorAdjunto(ProfesorAdjunto), cupoMaximoDeAlumnos(Integer) y listaDeAlumnos(List<Alumno>)
-Por ahora, a estos atributos tambien habra que pasarlos como parmaetros, asi que los agrego al constructor y tambien sumo sus getters y setters.
+ * Item 1, parte E.
+ * Ahora al curso se le agregan los atributos profesorTitular(ProfesorTitular), profesorAdjunto(ProfesorAdjunto), cupoMaximoDeAlumnos(Integer) y listaDeAlumnos(List<Alumno>)
+ * Por ahora, a estos atributos tambien habra que pasarlos como parmaetros, asi que los agrego al constructor y tambien sumo sus getters y setters.
  */
 
 public class Curso {
@@ -75,6 +77,18 @@ public class Curso {
     public void setCodigoDeCurso(Integer codigoDeCurso) {
         this.codigoDeCurso = codigoDeCurso;
     }
+
+    //public Boolean agregarUnAlumno(Alumno unAlumno)
+    public boolean agregarUnAlumno(Alumno unAlumno) {
+        if (this.cupoMaximoDeAlumnos >= listaDeAlumnos.size()) ;
+        listaDeAlumnos.add(unAlumno);
+        return true;
+    }
+
+    public void eliminarAlumno(Alumno unAlumno){
+        listaDeAlumnos.remove(unAlumno);
+    }
+
 
     @Override
     public boolean equals(Object cursoAComparar) {
