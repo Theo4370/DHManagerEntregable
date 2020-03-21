@@ -90,4 +90,33 @@ public class DigitalHouseManager {
             System.out.println("Se Inscribio con exito a " + alumnoAInscribir.getNombre() + " " + alumnoAInscribir.getApellido() + " al curso de " + cursoAInscribir.getNombreDelCurso());
         }
     }
+
+
+    public void asignarProfesores(Integer codigoCurso, Integer codigoProfesorTitular, Integer codigoProfesorAdjunto) {
+        Curso cursoAAsignar = null;
+        ProfesorTitular profeTitularAAsignar = null;
+        ProfesorAdjunto profeAdjuntoAAsignar = null;
+
+        for (Curso curso : listaDeCursos) {
+            if (codigoCurso.equals(curso.getCodigoDeCurso())) {
+                cursoAAsignar = curso;
+                break;
+            }
+
+        }
+        for (Profesor profeAdj : listaDeProfesores) {
+            if (codigoProfesorAdjunto.equals(profeAdj.getCodigoDeProfesor())) {
+                profeAdjuntoAAsignar = (ProfesorAdjunto) profeAdj;
+                break;
+            }
+        }
+        for (Profesor profeTit : listaDeProfesores) {
+            if (codigoProfesorTitular.equals(profeTit.getCodigoDeProfesor())) {
+                profeTitularAAsignar = (ProfesorTitular) profeTit;
+                break;
+            }
+        }
+        cursoAAsignar.setProfesorAdjunto(profeAdjuntoAAsignar);
+        cursoAAsignar.setProfesorTitular(profeTitularAAsignar);
+    }
 }

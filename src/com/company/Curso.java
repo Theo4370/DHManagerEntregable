@@ -94,7 +94,7 @@ public class Curso {
             return listaDeAlumnos.add(unAlumno);
 
         } else {
-            System.out.println("El alumno " + unAlumno.getNombre() + " no pudo inscribirse porque no hay mas cupos para este curso");
+            System.out.println("El alumno " + unAlumno.getNombre() + " no pudo inscribirse porque no hay mas cupos para el curso de "+getNombreDelCurso());
         }
         return false;
     }

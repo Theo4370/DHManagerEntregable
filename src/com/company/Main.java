@@ -29,6 +29,7 @@ public class Main {
         nuevoManager.altaAlumno("Juan", "Perez", 55115);
         nuevoManager.inscribirAlumno(55115, 8796);
         nuevoManager.inscribirAlumno(55117, 8796);
+nuevoManager.asignarProfesores(8796,4370,3819);
 
     }
 }
