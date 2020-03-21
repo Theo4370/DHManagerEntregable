@@ -57,3 +57,12 @@ public class Main {
 
     }
 }
+
+
+/**
+ * Parte K.
+ * Para que el alumno sepa a que curso esta incripto, se podria agregar un atributo List<Inscripcion> listaInscripcionesAlumno a la clase Alumno, y un metodo que consulte la lista y devuelva que inscripciones
+ * tiene hechas ese alumno.
+ * Tambien habria que definir un metodo para que el alumno pueda agregar o quitar una inscripcion a su lista.
+ * En el diagrama de clases habria que agregar una flecha de "tiene" (solida y rellena) desde la clase Alumno hasta la clase Inscripcion.
+ */

@@ -16,7 +16,7 @@ public class DigitalHouseManager {
     private List<Alumno> listaDeAlumnos = new ArrayList<>();
     private List<Profesor> listaDeProfesores = new ArrayList<>();
     private List<Inscripcion> listaDeInscripciones = new ArrayList<>();
-    //Para poder agregar cursos, necesito que listaDeCursos sea un new ArrayList() (si no me devolveria null)
+    //Para poder agregar cursos, necesito que listaDeCursos sea un new ArrayList() (si no me devolveria null). APLICA LO MISMO CON TODOS LOS ATRIBUTOS.
     private List<Curso> listaDeCursos = new ArrayList<>();
 
     public List<Profesor> getListaDeProfesores() {
@@ -102,7 +102,6 @@ public class DigitalHouseManager {
                 cursoAAsignar = curso;
                 break;
             }
-
         }
         for (Profesor profeAdj : listaDeProfesores) {
             if (codigoProfesorAdjunto.equals(profeAdj.getCodigoDeProfesor())) {
