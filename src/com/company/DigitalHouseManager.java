@@ -5,6 +5,7 @@ import com.company.Profesor.ProfesorAdjunto;
 import com.company.Profesor.ProfesorTitular;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,9 +13,9 @@ import java.util.List;
  */
 
 public class DigitalHouseManager {
-    private List<Alumno> listaDeAlumnos;
+    private List<Alumno> listaDeAlumnos = new ArrayList<>();
     private List<Profesor> listaDeProfesores = new ArrayList<>();
-    private List<Inscripcion> listaDeInscripciones;
+    private List<Inscripcion> listaDeInscripciones = new ArrayList<>();
     //Para poder agregar cursos, necesito que listaDeCursos sea un new ArrayList() (si no me devolveria null)
     private List<Curso> listaDeCursos = new ArrayList<>();
 
@@ -59,5 +60,34 @@ public class DigitalHouseManager {
             }
         }
         this.listaDeProfesores.remove(profesorBaja);
+    }
+
+    public void altaAlumno(String nombre, String apellido, Integer codigoAlumno) {
+        Alumno alumno = new Alumno(nombre, apellido, codigoAlumno);
+        this.listaDeAlumnos.add(alumno);
+    }
+
+    public void inscribirAlumno(Integer codigoAlumno, Integer codigoCurso) {
+        Curso cursoAInscribir = null;
+        Alumno alumnoAInscribir = null;
+
+        for (Curso curso : listaDeCursos) {
+            if (codigoCurso.equals(curso.getCodigoDeCurso())) {
+                cursoAInscribir = curso;
+                break;
+            }
+        }
+
+        for (Alumno alumno : listaDeAlumnos) {
+            if (codigoAlumno.equals(alumno.getCodigoDeAlumno())) {
+                alumnoAInscribir = alumno;
+                break;
+            }
+        }
+        if (cursoAInscribir.agregarUnAlumno(alumnoAInscribir)) {
+            Inscripcion nuevaInscripcion = new Inscripcion(alumnoAInscribir, cursoAInscribir);
+            listaDeInscripciones.add(nuevaInscripcion);
+            System.out.println("Se Inscribio con exito a " + alumnoAInscribir.getNombre() + " " + alumnoAInscribir.getApellido() + " al curso de " + cursoAInscribir.getNombreDelCurso());
+        }
     }
 }

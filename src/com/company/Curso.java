@@ -84,14 +84,19 @@ public class Curso {
     }
 
 
+    /**
+     * Parte I, item 7.
+     * Tuve que modificar la función agregarUnAlumno, ya que la funcion inscribirAlumno en la clase DigitalHouseManager hacia la inscripcion aun cuando no habia cupos
+     * Lo resolvi cambiando el return por false en agregarUnAlumno.
+     */
     public boolean agregarUnAlumno(Alumno unAlumno) {
         if (this.cupoMaximoDeAlumnos > listaDeAlumnos.size()) {
-            listaDeAlumnos.add(unAlumno);
+            return listaDeAlumnos.add(unAlumno);
 
         } else {
-            System.out.println("No hay mas cupos para este curso");
+            System.out.println("El alumno " + unAlumno.getNombre() + " no pudo inscribirse porque no hay mas cupos para este curso");
         }
-        return true;
+        return false;
     }
 
     public void eliminarAlumno(Alumno unAlumno) {
