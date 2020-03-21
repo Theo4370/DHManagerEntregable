@@ -54,7 +54,6 @@ public class Main {
         //Doy de baja un curso
 
         nuevoManager.bajaCurso(20002);
-
     }
 }
 

@@ -35,52 +35,24 @@ public class Curso {
         this.listaDeAlumnos = new ArrayList<>();
     }
 
-    public ProfesorTitular getProfesorTitular() {
-        return profesorTitular;
-    }
-
     public void setProfesorTitular(ProfesorTitular profesorTitular) {
         this.profesorTitular = profesorTitular;
-    }
-
-    public ProfesorAdjunto getProfesorAdjunto() {
-        return profesorAdjunto;
     }
 
     public void setProfesorAdjunto(ProfesorAdjunto profesorAdjunto) {
         this.profesorAdjunto = profesorAdjunto;
     }
 
-    public Integer getCupoMaximoDeAlumnos() {
-        return cupoMaximoDeAlumnos;
-    }
-
-    public void setCupoMaximoDeAlumnos(Integer cupoMaximoDeAlumnos) {
-        this.cupoMaximoDeAlumnos = cupoMaximoDeAlumnos;
-    }
-
     public List<Alumno> getListaDeAlumnos() {
         return listaDeAlumnos;
-    }
-
-    public void setListaDeAlumnos(List<Alumno> listaDeAlumnos) {
-        this.listaDeAlumnos = listaDeAlumnos;
     }
 
     public String getNombreDelCurso() {
         return nombreDeCurso;
     }
 
-    public void setNombreDelCurso(String nombreDelCurso) {
-        this.nombreDeCurso = nombreDelCurso;
-    }
-
     public Integer getCodigoDeCurso() {
         return codigoDeCurso;
-    }
-
-    public void setCodigoDeCurso(Integer codigoDeCurso) {
-        this.codigoDeCurso = codigoDeCurso;
     }
 
 
@@ -94,7 +66,7 @@ public class Curso {
             return listaDeAlumnos.add(unAlumno);
 
         } else {
-            System.out.println("El alumno " + unAlumno.getNombre() + " no pudo inscribirse porque no hay mas cupos para el curso de "+getNombreDelCurso());
+            System.out.println("El alumno " + unAlumno.getNombre() + " no pudo inscribirse porque no hay mas cupos para el curso de " + getNombreDelCurso());
         }
         return false;
     }

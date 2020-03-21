@@ -1,7 +1,10 @@
 package com.company.Profesor;
 
+import java.lang.reflect.AnnotatedArrayType;
+
 public class ProfesorAdjunto extends Profesor {
     private Integer horasDeConsulta;
+    private static final Integer ANTIGUEDAD_INICIAL = 0;
 
     /**
      * Item I, item 3.
@@ -9,17 +12,12 @@ public class ProfesorAdjunto extends Profesor {
      */
 
     public ProfesorAdjunto(String nombre, String apellido, Integer codigoDeProfesor, Integer horasDeConsulta) {
-        super(nombre, apellido, codigoDeProfesor);
+        super(nombre, apellido, codigoDeProfesor, ANTIGUEDAD_INICIAL);
         this.horasDeConsulta = horasDeConsulta;
     }
 
     public Integer getHorasDeConsulta() {
         return horasDeConsulta;
     }
-
-    public void setHorasDeConsulta(Integer horasDeConsulta) {
-        this.horasDeConsulta = horasDeConsulta;
-    }
-
 
 }

@@ -5,6 +5,7 @@ package com.company.Profesor;
  * Para agregar dos nuevas categorias de profesores, creo dos nuevas clases llamadas ProfesorTitular y ProfesorAdjunto, estas pasan a ser extensiones de la clase Profesor, tomando todos sus atributos y métodos.
  * La clase profesor pasa a ser abstracta, ya que nunca vamos a crear un objeto de clase Profesor, si no que siempre tendra que ser Titular o Adjunto.
  */
+
 /**
  * Item 3 y 4, parte I.
  * Como en ambos casos la antiguedad inicial de todos los profesores es 0, pongo directamente este valor como fijo dentro del constructor usando static final ANTIGUEDAD_INICIAL.
@@ -18,11 +19,10 @@ public abstract class Profesor {
     private Integer codigoDeProfesor;
 
 
-
-    public Profesor(String nombre, String apellido, Integer codigoDeProfesor) {
+    public Profesor(String nombre, String apellido, Integer codigoDeProfesor, Integer antiguedad) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.antiguedad = 0;
+        this.antiguedad = antiguedad;
         this.codigoDeProfesor = codigoDeProfesor;
     }
 
@@ -30,24 +30,12 @@ public abstract class Profesor {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
     public Integer getCodigoDeProfesor() {
         return codigoDeProfesor;
-    }
-
-    public void setCodigoDeProfesor(Integer codigoDeProfesor) {
-        this.codigoDeProfesor = codigoDeProfesor;
     }
 
 
